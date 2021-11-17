@@ -16,7 +16,6 @@ bool isAmicable(int a) {
 }
 
 int main () {
-    std::vector<int> dupe;
     int sum = 0;
     for (int i = 1; i < 10000; i++) {
         if (isAmicable(i)) {
