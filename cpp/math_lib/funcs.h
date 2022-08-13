@@ -14,7 +14,6 @@ Assortment of common functions for project euler problems made by me
 
 // https://www.cplusplus.com/reference/algorithm/
 
-
 template <typename T>
 void out(T data) {
     std::cout << data << std::endl;
