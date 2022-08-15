@@ -101,12 +101,9 @@ uint digitcount(uint n) {
 }
 
 bool isPalindrome(std::string n) {
-    // std::string s = n;
-    // std::reverse(n.begin(),n.end());
-    // return s == n;
     uint s = n.size();
     for (uint i = 0; i < s; i++) {
-        if (n[0] != n[s-1-i]) {
+        if (n[i] != n[s-1-i]) {
             return false;
         }
     }

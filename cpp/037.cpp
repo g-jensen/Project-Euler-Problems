@@ -87,5 +87,5 @@ int main () {
     mystery(5,0);
     mystery(2,0);
     std::cout<<sum<<std::endl;
-
+    free(pmap);
 }
