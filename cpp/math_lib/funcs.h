@@ -26,24 +26,8 @@ bool isPrime(uint n) {
     return true;
 }
 
-bool isPrime(int n) {
-    if (n < 2) {return false;}
-    if (n == 2 || n == 3) {return true;}
-    if (n % 2 == 0) {return false;}
-    for (int i = 3; i <= sqrt(n); i += 2) {
-        if (n % i == 0) {
-            return false;
-        }
-    }
-    return true;
-}
-
 // sum of squares from 1 to n
 uint sumOfSquares(uint n) {
-    return n*(n+1)*(2*n + 1)/6;
-}
-
-int sumOfSquares(int n) {
     return n*(n+1)*(2*n + 1)/6;
 }
 
@@ -52,12 +36,8 @@ uint squareOfSum(uint n) {
     return pow((n+1)*n/2,2);
 }
 
-int squareOfSum(int n) {
-    return pow((n+1)*n/2,2);
-}
-
 // including 1
-int factorCount(int n) {
+uint factorCount(uint n) {
     int count = 1;
     for (int i = 2; i < (n/2)+1; i++) {
         if (n % i == 0) {
@@ -68,8 +48,8 @@ int factorCount(int n) {
 }
 
 // including 1
-std::vector<int> getFactors(int n) {
-    std::vector<int> out = {1};
+std::vector<uint> getFactors(uint n) {
+    std::vector<uint> out = {1};
     for (int i = 2; i < (n/2)+1; i++) {
         if (n % i == 0) {
             out.push_back(i);
@@ -78,18 +58,18 @@ std::vector<int> getFactors(int n) {
     return out;
 }
 
-int amicate(int n) {
+uint amicate(uint n) {
     auto v = getFactors(n);
     return std::accumulate(v.begin(),v.end(),0);
 }
 
-bool isAmicable(int n) {
+bool isAmicable(uint n) {
     int p = amicate(n);
     return amicate(p) == n && n != p;
 }
 
 
-int factorial(int n) {
+uint factorial(uint n) {
     int output = 1;
     if (n <= 1) {
         return output;
@@ -100,8 +80,8 @@ int factorial(int n) {
     return output;
 }
 
-std::vector<int> getdigits(int n) {
-    std::vector<int> digits;
+std::vector<uint> getdigits(uint n) {
+    std::vector<uint> digits;
     while (n / 10 != 0) {
         digits.push_back(n % 10);
         n /= 10;
@@ -112,9 +92,23 @@ std::vector<int> getdigits(int n) {
 }
 
 uint digitcount(uint n) {
-    return (uint)(log10(n) + 1);
+    uint count = 0;
+    while (n!=0) {
+        n/=10;
+        count++;
+    }
+    return count;
 }
 
-int digitcount (int n) {
-    return (int)(log10(abs(n)) + 1);
+bool isPalindrome(std::string n) {
+    // std::string s = n;
+    // std::reverse(n.begin(),n.end());
+    // return s == n;
+    uint s = n.size();
+    for (uint i = 0; i < s; i++) {
+        if (n[0] != n[s-1-i]) {
+            return false;
+        }
+    }
+    return true;
 }

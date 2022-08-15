@@ -1,7 +1,5 @@
 #include "funcs.h"
 
 int main () {
-    out("farts");
-    out(5);
-    out(digitcount(100));
+    std::cout<<isPalindrome("1001")<<std::endl;
 }
