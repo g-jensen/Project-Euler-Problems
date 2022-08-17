@@ -109,3 +109,18 @@ bool isPalindrome(std::string n) {
     }
     return true;
 }
+
+bool is_pandigital(int n) {
+    if (n < 123456789) { return false;}
+    std::array<int,9> digits;
+    while (n != 0) {
+        int m = n % 10;
+        if (m != 0) {
+            digits[m-1] = 1;
+        } else {
+            return false;
+        }
+        n /= 10;
+    }
+    return (std::accumulate(digits.begin(),digits.end(),0) == 9);
+}

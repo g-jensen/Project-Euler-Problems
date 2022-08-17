@@ -1,0 +1,1 @@
+paper, pencil, calculator
