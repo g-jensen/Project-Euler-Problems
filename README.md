@@ -1,6 +1,6 @@
 # Project-Euler-Problems
 
-Project Euler is a website where it gives you mathematical problems and you solve them using programming.
+Project Euler is a website that hosts a set of mathematical problems to solve using programming.
 
 About page: https://projecteuler.net/about
 
